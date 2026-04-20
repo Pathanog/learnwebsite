@@ -3,54 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LEARN TOGETHER | Premium Elite</title>
+    <title>LEARN TOGETHER | Dark Luxe</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Plus+Jakarta+Sans:wght@200;400;800&display=swap');
         
         :root {
-            --bg: #ffffff;
-            --text: #000000;
+            /* Color from the logo: Deep Maroon/Burgundy */
+            --bg-base: #800000; 
+            /* Accent color, slightly brighter for borders/interaction */
+            --bg-accent: #9A1111;
+            --text-main: #ffffff;
+            --text-sub: #E2E8F0; /* Slightly off-white for body text */
         }
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
+            background-color: var(--bg-base);
+            /* Subtle texture overlay for premium feel */
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            color: var(--text-main);
             overflow-x: hidden;
             margin: 0;
         }
 
-        /* Glassmorphism Cards */
+        /* Glassmorphism Luxe Cards */
         .glass-card {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(0, 0, 0, 0.05);
+            background: rgba(255, 255, 255, 0.05); /* Slight white tint on deep background */
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
         }
 
         .glass-card:hover {
-            border: 1px solid rgba(0, 0, 0, 0.2);
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
         }
 
-        /* Floating Orbs */
+        /* Update button styles for contrast */
+        .cta-button {
+            background-color: var(--text-main);
+            color: var(--bg-base); /* Logo color text on white button */
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: var(--text-sub);
+            transform: scale(1.03);
+        }
+
+        /* Keep existing floating orbs, just subtly colored */
         .orb {
             position: fixed;
             border-radius: 50%;
-            filter: blur(80px);
+            filter: blur(100px);
             z-index: -1;
-            opacity: 0.3;
-            animation: float 20s infinite alternate;
+            opacity: 0.15; /* Subtler on dark background */
+            animation: float 25s infinite alternate;
         }
 
         @keyframes float {
             0% { transform: translate(0, 0); }
-            100% { transform: translate(100px, 50px); }
+            100% { transform: translate(120px, 60px); }
         }
 
-        /* Water Ripple Container */
+        /* Water Ripple Container - updated ripple color for contrast */
         #ripple-container {
             position: fixed;
             top: 0;
@@ -63,15 +81,15 @@
 
         .ripple {
             position: absolute;
-            border: 1px solid rgba(0,0,0,0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2); /* White ripple */
             border-radius: 50%;
             transform: scale(0);
-            animation: ripple-effect 1s ease-out;
+            animation: ripple-effect 1.2s ease-out;
         }
 
         @keyframes ripple-effect {
             to {
-                transform: scale(4);
+                transform: scale(5);
                 opacity: 0;
             }
         }
@@ -80,62 +98,62 @@
 <body>
 
     <div id="ripple-container"></div>
-    <div class="orb w-96 h-96 bg-gray-200 top-[-10%] left-[-10%]"></div>
-    <div class="orb w-80 h-80 bg-gray-100 bottom-[10%] right-[-5%]" style="animation-delay: -5s;"></div>
+    <div class="orb w-[500px] h-[500px] bg-red-800 top-[-15%] left-[-10%]"></div>
+    <div class="orb w-[400px] h-[400px] bg-amber-900 bottom-[10%] right-[-5%]" style="animation-delay: -7s;"></div>
 
-    <nav class="p-8 flex justify-between items-center max-w-7xl mx-auto">
-        <h1 class="text-xl font-extrabold tracking-widest uppercase">✦ LEARN</h1>
-        <div class="space-x-10 text-xs font-bold tracking-tighter uppercase opacity-60">
-            <a href="#" class="hover:opacity-100 transition-opacity">AI Tools</a>
-            <a href="#" class="hover:opacity-100 transition-opacity">Ecosystem</a>
-            <a href="#" class="bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition-all">Join Link</a>
+    <nav class="p-8 flex justify-between items-center max-w-7xl mx-auto border-b border-white border-opacity-10">
+        <h1 class="text-xl font-extrabold tracking-widest uppercase text-white">✦ LEARN</h1>
+        <div class="flex items-center space-x-10 text-xs font-bold tracking-tighter uppercase text-white">
+            <a href="#" class="opacity-60 hover:opacity-100 transition-opacity">AI Tools</a>
+            <a href="#" class="opacity-60 hover:opacity-100 transition-opacity">Ecosystem</a>
+            <a href="#" class="cta-button px-6 py-3 rounded-full font-bold uppercase text-[10px]">Join Link</a>
         </div>
     </nav>
 
     <section class="max-w-7xl mx-auto px-8 py-32 text-center">
-        <h2 class="text-7xl md:text-9xl font-extrabold tracking-tighter mb-8 leading-none">
+        <h2 class="text-7xl md:text-9xl font-extrabold tracking-tighter mb-8 leading-none text-white">
             FOCUS.<br>EVOLVE.
         </h2>
-        <p class="text-gray-400 text-lg md:text-xl font-light max-w-xl mx-auto mb-12">
-            The elite Discord community for students and creators. Minimalist by design. High-performance by nature.
+        <p class="text-white opacity-70 text-lg md:text-xl font-light max-w-xl mx-auto mb-12">
+            The elite Discord sanctuary for students and creators. Minimalist. High-performance. Absolute focus.
         </p>
-        <div class="flex justify-center items-center gap-4">
-            <span class="h-[1px] w-12 bg-black opacity-20"></span>
-            <p class="text-xs font-bold uppercase tracking-widest">Less Distraction, More Progress</p>
-            <span class="h-[1px] w-12 bg-black opacity-20"></span>
+        <div class="flex justify-center items-center gap-4 text-white">
+            <span class="h-[1px] w-12 bg-white opacity-30"></span>
+            <p class="text-xs font-bold uppercase tracking-widest opacity-80">Less Distraction, More Progress</p>
+            <span class="h-[1px] w-12 bg-white opacity-30"></span>
         </div>
     </section>
 
     <section class="max-w-6xl mx-auto px-8 py-20 grid md:grid-cols-3 gap-8">
         <div class="glass-card p-12 rounded-[2rem]">
-            <p class="text-[10px] font-extrabold uppercase tracking-widest mb-6 opacity-30">01 / Logic</p>
-            <h3 class="text-2xl font-extrabold mb-4 uppercase">AI Career Bot</h3>
-            <p class="text-sm text-gray-500 leading-relaxed font-light">Custom roadmap generation and career intelligence built into your workspace.</p>
+            <p class="text-[10px] font-extrabold uppercase tracking-widest mb-6 text-white opacity-40">01 / Logic</p>
+            <h3 class="text-2xl font-extrabold mb-4 uppercase text-white">AI Career Bot</h3>
+            <p class="text-sm text-white text-opacity-70 leading-relaxed font-light">Custom roadmap generation and career intelligence built into your workspace.</p>
         </div>
 
         <div class="glass-card p-12 rounded-[2rem]">
-            <p class="text-[10px] font-extrabold uppercase tracking-widest mb-6 opacity-30">02 / Intelligence</p>
-            <h3 class="text-2xl font-extrabold mb-4 uppercase">Direct LLMs</h3>
-            <p class="text-sm text-gray-500 leading-relaxed font-light">Gemini and ChatGPT integration. Real-time research without leaving the focus zone.</p>
+            <p class="text-[10px] font-extrabold uppercase tracking-widest mb-6 text-white opacity-40">02 / Intelligence</p>
+            <h3 class="text-2xl font-extrabold mb-4 uppercase text-white">Direct LLMs</h3>
+            <p class="text-sm text-white text-opacity-70 leading-relaxed font-light">Gemini and ChatGPT integration. Real-time research without leaving the focus zone.</p>
         </div>
 
         <div class="glass-card p-12 rounded-[2rem]">
-            <p class="text-[10px] font-extrabold uppercase tracking-widest mb-6 opacity-30">03 / Flow</p>
-            <h3 class="text-2xl font-extrabold mb-4 uppercase">Deep Work</h3>
-            <p class="text-sm text-gray-500 leading-relaxed font-light">Smart Pomodoro tracking and accountability systems to kill procrastination.</p>
+            <p class="text-[10px] font-extrabold uppercase tracking-widest mb-6 text-white opacity-40">03 / Flow</p>
+            <h3 class="text-2xl font-extrabold mb-4 uppercase text-white">Deep Work</h3>
+            <p class="text-sm text-white text-opacity-70 leading-relaxed font-light">Smart Pomodoro tracking and accountability systems to kill procrastination.</p>
         </div>
     </section>
 
     <section class="max-w-7xl mx-auto px-8 pb-32">
-        <div class="bg-black text-white p-16 rounded-[3rem] text-center">
+        <div class="bg-white text-[#800000] p-16 rounded-[3rem] text-center">
             <h2 class="text-3xl font-extrabold mb-6">UNCOMPROMISING INTEGRITY.</h2>
-            <p class="text-gray-400 font-light max-w-2xl mx-auto text-sm leading-relaxed">
+            <p class="text-red-950 font-light max-w-2xl mx-auto text-sm leading-relaxed text-opacity-90">
                 We maintain a professional sanctuary. This includes strict moderation for <b>minor safety</b> and verified <b>female-friendly protocols</b>. Zero drama. Zero harassment. Just growth.
             </p>
         </div>
     </section>
 
-    <footer class="text-center py-12 opacity-20 text-[10px] font-bold tracking-[0.5em] uppercase">
+    <footer class="text-center py-12 opacity-30 text-[10px] font-bold tracking-[0.5em] uppercase text-white border-t border-white border-opacity-10">
         © 2026 LEARN TOGETHER Ecosystem — Built for the 1%
     </footer>
 
@@ -145,7 +163,7 @@
             const ripple = document.createElement('div');
             ripple.classList.add('ripple');
             
-            const size = 100;
+            const size = 120; // Slightly larger ripple
             ripple.style.width = ripple.style.height = size + 'px';
             ripple.style.left = e.clientX - size/2 + 'px';
             ripple.style.top = e.clientY - size/2 + 'px';
@@ -154,7 +172,7 @@
             
             setTimeout(() => {
                 ripple.remove();
-            }, 1000);
+            }, 1200); // Slower ripple duration
         });
     </script>
 </body>
